@@ -44,7 +44,7 @@ label bpquestion_001:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_001
 
@@ -68,7 +68,7 @@ label bpquestion_002:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_002
 
@@ -93,7 +93,7 @@ label bpquestion_003:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_003
 
@@ -117,7 +117,7 @@ label bpquestion_004:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_004
 
@@ -142,7 +142,7 @@ label bpquestion_005:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_005
 
@@ -167,7 +167,7 @@ label bpquestion_006:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_006
 
@@ -192,7 +192,7 @@ label bpquestion_007:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_007
 
@@ -217,7 +217,7 @@ label bpquestion_008:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_008
 
@@ -242,7 +242,7 @@ label bpquestion_009:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_009
 
@@ -267,7 +267,7 @@ label bpquestion_010:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_010
 
@@ -327,10 +327,10 @@ label bpquestion_011:
         hide screen question11
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Apprehensive' means feeling anxious or fearful about the future or something that might happen. It is often used to describe a sense of uncertainty or uneasiness."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question11
@@ -339,7 +339,7 @@ label bpquestion_011:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_011
 
@@ -351,10 +351,10 @@ label bpquestion_012:
         hide screen question12
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Conjecture' refers to a conclusion or opinion that is based on incomplete information or evidence. It is often used in academic or scientific contexts to describe a hypothesis or educated guess."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question12
@@ -363,7 +363,7 @@ label bpquestion_012:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_012
 
@@ -375,10 +375,10 @@ label bpquestion_013:
         hide screen question13
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Diligent' means working hard and being careful and thorough in one's tasks. It is often used to describe someone who is focused and committed to achieving their goals."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question13
@@ -387,7 +387,7 @@ label bpquestion_013:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_013
 
@@ -399,10 +399,10 @@ label bpquestion_014:
         hide screen question14
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Indignant' means feeling anger or irritation in response to something that is perceived as unfair or unjust. It is often used to describe a sense of moral outrage or indignation."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question14
@@ -411,7 +411,7 @@ label bpquestion_014:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_014
 
@@ -423,10 +423,10 @@ label bpquestion_015:
         hide screen question15
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Resilient' means being able to bounce back quickly from difficult or challenging situations. It is often used to describe a person or organization that is able to adapt and recover from setbacks."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question15
@@ -435,7 +435,7 @@ label bpquestion_015:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_015
 
@@ -447,10 +447,10 @@ label bpquestion_016:
         hide screen question16
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Furious' describes a state of extreme anger or rage."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question16
@@ -459,7 +459,7 @@ label bpquestion_016:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_016
 
@@ -471,10 +471,10 @@ label bpquestion_017:
         hide screen question17
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Condemn' means to express strong disapproval or criticism towards someone "
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question17
@@ -483,7 +483,7 @@ label bpquestion_017:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_017
 
@@ -495,10 +495,10 @@ label bpquestion_018:
         hide screen question18
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Mourn' refers to the act of feeling or expressing deep sorrow or regret, often in response to a loss or tragedy."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question18
@@ -507,7 +507,7 @@ label bpquestion_018:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_018
 
@@ -519,10 +519,10 @@ label bpquestion_019:
         hide screen question19
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Request' means to make a formal or polite appeal or solicitation for something."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question19
@@ -531,7 +531,7 @@ label bpquestion_019:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_019
 
@@ -543,10 +543,10 @@ label bpquestion_020:
         hide screen question20
         ct "Wonderful [player_name]!"
         ct "Explanation: 'Terrify' means to cause intense fear, fright, or distress in someone."
-        $ player_score += 1
+        $ player_score2 += 1
         return "pass"
     
-    $ player_score -= 1
+    $ player_score2 -= 1
     $ lives -= 1
 
     hide screen question20
@@ -555,19 +555,19 @@ label bpquestion_020:
     hide boyworried with dissolve
 
     if lives <= 0:
-        jump end_game2
+        jump end_game
 
     jump bpquestion_020
 
 label bscoref3:
-    "your final score: [player_score]"
+    "your final score: [player_score2]"
     jump bprogress3
 
 label bprogress3:
-    if player_score == 12:
+    if player_score2 == 7:
         jump bbroundd
 
-    if player_score >= 8:
+    if player_score2 >= 5:
         jump bsecondvillainwin
 
     jump bsecondvillainlose

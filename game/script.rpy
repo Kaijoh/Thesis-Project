@@ -28,7 +28,7 @@ image blacks = im.Scale("blacks.png", 1920, 1080)
 
 
 image idle_1 = im.Scale("idle.jpg", 1920, 1080) 
-image teleport = Movie(size=(1920, 1080), channel="movie", play="images/Videos/tele.webm", loop=True) 
+image teleport = Movie(size=(1920, 1080), channel="movie", play="images/Videos/tele.ogv", loop=True) 
 
 image mytext = ParameterizedText(style="something")
 
@@ -38,6 +38,9 @@ style something:
     yalign 0.5
 
 default player_score = 0
+default player_score2 = 0
+default player_score3 = 0
+
 default max_pages = 3
 default pages = 0
 default max_lives = 3
@@ -100,6 +103,7 @@ label variable1:
 
     scene black
     n "Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world."
+    # jump bAct1
     jump bAct1
     
 
@@ -128,18 +132,14 @@ label end_game2:
         "Play Again?": 
             jump notsubmit 
 
+
 label end_game:
-    hide screen hearts
-    hide screen books
-    hide screen fullbooks
-    hide screen gameUI
-    hide screen rewardbutton
     scene black 
     python: 
         import requests 
         import json 
  
-        data = {'player_name': player_name, 'player_score': str(player_score)} 
+        data = {'player_name': player_name, 'player_score': str(player_score), 'player_score2': str(player_score2), 'player_score3': str(player_score3)} 
 
         response = requests.post('http://localhost:8000/submit_score/', data=data) 
  
@@ -152,7 +152,7 @@ label end_game:
                     player_scores = response.json() 
                     # Display the scores 
                     for score in player_scores: 
-                        print(f"Name: {score['player_name']}, Score: {score['player_score']}") 
+                        print(f"Name: {score['player_name']}, Score: {score['player_score']}, Score2: {score['player_score2']}, Score3: {score['player_score3']} ") 
                 except json.JSONDecodeError as e: 
                     print(f"Error decoding response: {e}") 
             else: 
@@ -162,8 +162,9 @@ label end_game:
             # If the request was not successful, display an error message 
             print(f"Error submitting score: {response.status_code} {response.reason}") 
 
+
     ct "GAME OVER!......"
-    "Your score: [player_score], would you like to submit it? note: dont submit if you dont want your data to be seen by others" 
+    "Your scores: Easy[player_score], Medium[player_score2], Hard[player_score3]" 
  
     menu: 
         "Exite Game and submit score?": 
@@ -171,12 +172,22 @@ label end_game:
         "Play Again?": 
             jump notsubmit 
  
-label submit: 
+label submit:
+    hide screen hearts
+    hide screen books
+    hide screen fullbooks
+    hide screen gameUI
+    hide screen rewardbutton 
     "Your score: [player_score], has been submitted. Thank you for playing!" 
     scene
     jump splashscreen3
  
-label notsubmit: 
+label notsubmit:
+    hide screen hearts
+    hide screen books
+    hide screen fullbooks
+    hide screen gameUI
+    hide screen rewardbutton
     "Your score: [player_score], goodluck!"
 
     jump splashscreen3

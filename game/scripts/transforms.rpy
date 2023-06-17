@@ -33,6 +33,67 @@ transform bround_bounce:
 
 
 #images for the transforms
+image map:
+    "map.jpg"
+    zoom 1.6
+
+image sts:
+    "sts.png"
+    zoom 0.30
+image sts1:
+    "sts.png"
+    zoom 0.40
+
+image sps:
+    "sps.png"
+    zoom 0.30
+image sps1:
+    "sps.png"
+    zoom 0.40
+
+image spon:
+    "Speakerloud.png"
+    zoom 0.30
+image spon1:
+    "Speakerloud.png"
+    zoom 0.40
+
+image spoff:
+    "speakeroff.png"
+    zoom 0.30
+image spoff1:
+    "speakeroff.png"
+    zoom 0.40
+
+
+image mi:
+    "micon.png"
+    zoom 0.30
+image mii:
+    "micon.png"
+    zoom 0.40
+
+image rn:
+    "rn.png"
+    zoom 1.40
+
+image rn1:
+    "rn.png"
+    zoom 1.55
+
+image mt:
+    "mt.png"
+    zoom 0.60
+image mt1:
+    "mt.png"
+    zoom 0.75
+
+image cv:
+    "cv.png"
+    zoom 1.25
+image cv1:
+    "cv.png"
+    zoom 1.40
 # bonus
 
 image cat:

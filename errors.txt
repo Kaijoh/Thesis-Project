@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 21: expected statement.
-    config.disable_mousewheel = False
-                              ^
+File "game/script.rpy", line 1: expected statement.
+    config.sound_muted = False
+                       ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Tue May 23 22:51:38 2023
+Sat Jun 17 23:17:46 2023

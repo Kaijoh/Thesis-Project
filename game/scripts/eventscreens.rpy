@@ -81,11 +81,12 @@ screen addpages():
 
 screen gameUI():
     imagebutton:
-        xalign 1.0
+        xalign 0.88
         yalign 0.0
         xoffset -30
         yoffset 30
-        idle "stat"
+        idle "sts"
+        hover "sts1"
         action ShowMenu("StatsUI")
 
 screen StatsUI():
@@ -129,17 +130,18 @@ screen StatsUI():
     
 screen rewardbutton():
     imagebutton:
-        xalign 0.88
+        xalign 0.82
         yalign 0.0
         xoffset -30
         yoffset 30
-        idle "stat2"
+        idle "sps"
+        hover "sps1"
         action ShowMenu("rewardshop")
 
-screen rewardshop():
+screen rewardshop(): 
     vbox:
         xalign 0.5
-        yalign 0.2
+        yalign 0.05
         frame:
             background "#706969"
             xalign 0.5

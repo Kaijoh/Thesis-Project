@@ -1,9 +1,14 @@
 label bAct1:
+    # play music "audio/jjk.mp3"
     scene black
     window hide
     ct "Act 1:"
     with Pause(1)
     show pic_5
+    show screen bmapbutton
+    show screen soundson
+    show screen gameUI
+    show screen rewardbutton 
     n "You are cleaning out the school library when you come across a mysterious book."
 
     hide pic_5
@@ -21,8 +26,8 @@ label bAct1:
             pass
 
         "don't open the book and return it":
-            "Your final score [player_score]"
-            jump end_game2
+            "Your final score [player_score], [player_score2], [player_score3]"
+            jump end_game
 
     player_name "'The Lost Pages'? It looks pretty old...and it's missing some pages too."
     
@@ -64,7 +69,7 @@ label bAct1:
         "Let's find the missing pages!":
             jump bAct2
         "I'm too scared. Can't we just leave?":
-            jump end_game2
+            jump end_game
 
     hide pic_8
 
@@ -118,11 +123,12 @@ label bAct2:
 
         "I'm too scared. Let's turn back.":
             "Your final score [player_score]"
-            jump end_game2
+            jump end_game
     
 label bAct3:
     scene black
     window hide
+    show screen bmapbutton
     ct "Act 3: Learning English Concepts"
     with Pause(1)
     show pic_11
@@ -155,17 +161,20 @@ label bAct3:
 label bAct3_2:
     #grammar puzzle
     scene black
+    show screen bmapbutton
     n "You and Robin continued their journey to the magical cave."
     jump bsecondvillain
 
 label bAct3_3:
     #quiz
     scene black
+    show screen bmapbutton
     n "You and Robin continued their journey to the ruins."
     jump bthirdvillain
 
 label bAct3_4:
     # Wise One's castle
+    show screen bmapbutton
     show wisemsurprised at left with moveinleft
     w "Well done, my young travelers. You have found all of the missing pages. And not only that, you have also learned much about the English language."
     show wisemsurprised at left, darken
@@ -197,6 +206,7 @@ label bAct4:
     ct "Act 4: Conclusion...."
     with Pause(1)
     show pic_5 with dissolve
+    show screen bmapbutton
 
     n "You return to reality and reflect on your adventure."
     
@@ -298,4 +308,4 @@ label cho4:
     
 label bActclosing:
     scene
-    jump end_game2
+    jump end_game

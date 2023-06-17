@@ -45,7 +45,7 @@ label bquestion_001:
     ct "question"
     menu(question="What is an adjective?"):
         "a. A word that describes a noun or pronoun":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "b. A word that replaces a noun":
             pass
@@ -54,7 +54,7 @@ label bquestion_001:
         "d. A word that connects two ideas":
             pass
 
-    $ player_score -= 1
+    $ player_score3 -= 1
     $ lives -= 1
 
     show boyupset at right with hpunch
@@ -71,7 +71,7 @@ label bquestion_002:
     # Answer: a) A word that describes a verb, adjective, or other adverb
     menu (question="What is an adverb?"):
         "a. A word that describes a verb, adjective, or other adverb":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "b. A word that connects two ideas":
             pass
@@ -80,7 +80,7 @@ label bquestion_002:
         "d. A word that describes a noun or pronoun":
             pass
 
-    $ player_score -= 1
+    $ player_score3 -= 1
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -99,14 +99,14 @@ label bquestion_003:
         "a. quickly":
             pass
         "b. beautiful":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "c. they":
             pass
         "d. who":
             pass   
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -125,14 +125,14 @@ label bquestion_004:
         "a. happy":
             pass
         "b. slowly":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "c. her":
             pass
         "d. we":
             pass    
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -153,12 +153,12 @@ label bquestion_005:
         "b. quickly":
             pass
         "c. he":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "d. sweet":
             pass    
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -181,10 +181,10 @@ label bquestion_006:
         "c. your":
             pass
         "d. they":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -205,12 +205,12 @@ label bquestion_007:
         "b. me":
             pass
         "c. my":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "d. he":
             pass 
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -227,7 +227,7 @@ label bquestion_008:
     ct "Question"
     menu (question="Which of the following is an example of a demonstrative pronoun?"):
         "a. this":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "b. him":
             pass
@@ -236,7 +236,7 @@ label bquestion_008:
         "d. ourselves":
             pass     
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -255,14 +255,14 @@ label bquestion_009:
         "a. those":
             pass
         "b. anyone":
-            $ player_score += 1
+            $ player_score3 += 1
             return "pass"
         "c. these":
             pass
         "d. both":
             pass   
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -286,10 +286,10 @@ label bquestion_010:
         "c. himself":
             pass
         "d. all of the above":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -313,10 +313,10 @@ label bquestion_011:
         "c. They arrived early.":
             pass
         "d. The red car drove by.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -338,12 +338,12 @@ label bquestion_012:
         "b. He is a fast runner.":
             pass
         "c. They studied hard for the exam.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "d.  The cat chased the mouse.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -363,14 +363,14 @@ label bquestion_013:
         "a. The sun is shining brightly.":
             pass
         "b. The teacher gave us homework.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "c. The children played in the park.":
             pass
         "d. She is a doctor.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -392,12 +392,12 @@ label bquestion_014:
         "b. This is my favorite book.":
             pass
         "c. They are going to the store.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "d. He is a good friend.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -417,14 +417,14 @@ label bquestion_015:
         "a. I have a cat.":
             pass
         "b. Her shoes are pink.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "c. Their dog barks a lot.":
             pass
         "d. Our house is big.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -442,7 +442,7 @@ label bquestion_016:
     
     menu (question="Which of the following sentences contains a demonstrative pronoun?"):
         "a. This is my favorite song.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "b. She likes to dance.":
             pass
@@ -451,7 +451,7 @@ label bquestion_016:
         "d. He is a kind person.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -469,7 +469,7 @@ label bquestion_017:
     
     menu (question="Which of the following sentences contains an indefinite pronoun?"):
         "a. Everyone should do their best.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "b. My aunt likes to read mystery novels.":
             pass
@@ -478,7 +478,7 @@ label bquestion_017:
         "d. He is a doctor and a teacher.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -496,7 +496,7 @@ label bquestion_018:
     
     menu (question="Which of the following sentences contains a reflexive pronoun?"):
         "a. I gave myself a pat on the back.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "b. She made the cake for herself.":
             pass
@@ -505,7 +505,7 @@ label bquestion_018:
         "d. They talked to each other for hours.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -525,14 +525,14 @@ label bquestion_019:
         "a. The dog barked loudly.":
             pass
         "b. She sings beautifully and loudly.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "c. He ran quickly to the store.":
             pass
         "d. They danced gracefully.":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -554,12 +554,12 @@ label bquestion_020:
         "b. They gave the book to her and me.":
             pass
         "c. She and he played tennis.":
-            $ player_score += 1 
+            $ player_score3 += 1 
             return "pass"
         "d. Whom did you invite to the party?":
             pass
 
-    $ player_score -= 1     
+    $ player_score3 -= 1     
     $ lives -= 1
 
     show boyupset at right with moveinbottom
@@ -573,11 +573,11 @@ label bquestion_020:
 
 #player nagivation after the quiz
 label bscoref:
-    "your final score: [player_score]"
+    "your final score: [player_score3]"
     jump bprogress1
 
 label bprogress1:
-    if player_score >= 15:
+    if player_score3 >= 7:
         jump bthirdvillainwin
     else:
         jump bthirdvillainlose

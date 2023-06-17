@@ -1,17 +1,17 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/options.rpy", line 21, in script
-    define config.disable_mousewheel = False
+  File "game/options.rpy", line 60, in script
+    define config.sound_muted = False
   File "renpy/common/000namespaces.rpy", line 33, in set
     setattr(self.nso, name, value)
-Exception: config.disable_mousewheel is not a known configuration variable.
+Exception: config.sound_muted is not a known configuration variable.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/options.rpy", line 21, in script
-    define config.disable_mousewheel = False
+  File "game/options.rpy", line 60, in script
+    define config.sound_muted = False
   File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 2508, in execute
     self.set()
   File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 2526, in set
@@ -20,9 +20,9 @@ Full traceback:
     setattr(self.nso, name, value)
   File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\defaultstore.py", line 101, in __setattr__
     raise Exception('config.%s is not a known configuration variable.' % (name))
-Exception: config.disable_mousewheel is not a known configuration variable.
+Exception: config.sound_muted is not a known configuration variable.
 
-Windows-10-10.0.19044 AMD64
+Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.0.23051307
 striped_template 1.0
-Tue May 23 22:51:26 2023
+Sat Jun 17 23:18:48 2023
