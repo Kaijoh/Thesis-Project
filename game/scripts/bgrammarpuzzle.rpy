@@ -1,4 +1,6 @@
 label bpquiz1():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts
@@ -288,6 +290,8 @@ label bprogress2:
 
 #vocabulary
 label bpquiz2():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts

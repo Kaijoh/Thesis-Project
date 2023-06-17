@@ -1,7 +1,7 @@
 init python:
     def next_rnd_in_list( theList ):
-        last_used = theList.pop(0)
         renpy.random.shuffle(theList)
+        last_used = theList.pop(0)
         theList.append(last_used)
         return theList[0]
 
@@ -16,6 +16,8 @@ init python:
     # question_masterlist3 = [ "bquestion_001", "bquestion_002", "bquestion_003", "bquestion_004", "bquestion_005", "bquestion_006", "bquestion_007", "bquestion_008", "bquestion_009", "bquestion_010"]
     
 label gquiz1():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts

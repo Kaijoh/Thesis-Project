@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/options.rpy", line 60, in script
-    define config.sound_muted = False
-  File "renpy/common/000namespaces.rpy", line 33, in set
-    setattr(self.nso, name, value)
-Exception: config.sound_muted is not a known configuration variable.
+  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
+    call expression next_rnd_in_list(question_masterlist4)
+  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
+    call expression next_rnd_in_list(question_masterlist4)
+TypeError: unhashable type: 'RevertableList'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/options.rpy", line 60, in script
-    define config.sound_muted = False
-  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 2508, in execute
-    self.set()
-  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 2526, in set
-    ns.set(self.varname, value)
-  File "renpy/common/000namespaces.rpy", line 33, in set
-    setattr(self.nso, name, value)
-  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\defaultstore.py", line 101, in __setattr__
-    raise Exception('config.%s is not a known configuration variable.' % (name))
-Exception: config.sound_muted is not a known configuration variable.
+  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
+    call expression next_rnd_in_list(question_masterlist4)
+  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 1725, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
+    call expression next_rnd_in_list(question_masterlist4)
+  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\script.py", line 1003, in lookup
+    label = renpy.config.label_overrides.get(label, label)
+TypeError: unhashable type: 'RevertableList'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.0.23051307
 striped_template 1.0
-Sat Jun 17 23:18:48 2023
+Sun Jun 18 00:04:36 2023

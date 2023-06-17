@@ -1,4 +1,6 @@
 label bquiz1():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts

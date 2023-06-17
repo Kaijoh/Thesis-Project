@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1: expected statement.
-    config.sound_muted = False
-                       ^
+File "game/scripts/boyroute.rpy", line 131: expected 'name' not found.
+    show screen 
+                ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Sat Jun 17 23:17:46 2023
+Sun Jun 18 00:03:36 2023

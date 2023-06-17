@@ -128,7 +128,6 @@ label bAct2:
 label bAct3:
     scene black
     window hide
-    show screen bmapbutton
     ct "Act 3: Learning English Concepts"
     with Pause(1)
     show pic_11
@@ -161,20 +160,20 @@ label bAct3:
 label bAct3_2:
     #grammar puzzle
     scene black
-    show screen bmapbutton
+   
     n "You and Robin continued their journey to the magical cave."
     jump bsecondvillain
 
 label bAct3_3:
     #quiz
     scene black
-    show screen bmapbutton
+    
     n "You and Robin continued their journey to the ruins."
     jump bthirdvillain
 
 label bAct3_4:
     # Wise One's castle
-    show screen bmapbutton
+
     show wisemsurprised at left with moveinleft
     w "Well done, my young travelers. You have found all of the missing pages. And not only that, you have also learned much about the English language."
     show wisemsurprised at left, darken

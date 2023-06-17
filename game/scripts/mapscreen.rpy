@@ -21,7 +21,7 @@ screen bmapscreen():
             idle "rn" 
             hover "rn1"
             if pages >= 2:
-                action Jump("bAct3_3") 
+                action Jump("bthirdvillain") 
     vbox:
         xalign 0.5
         yalign 0.8
@@ -33,7 +33,7 @@ screen bmapscreen():
             idle "cv" 
             hover "cv1"
             if pages >= 1:
-                action Jump("bAct3_2") 
+                action Jump("bsecondvillain") 
     vbox:
         xalign 0.94
         yalign 0.3
@@ -45,7 +45,7 @@ screen bmapscreen():
             idle "mt" 
             hover "mt1"
             if pages >= 0:
-                action Jump("bAct3") 
+                action Jump("bfirstvillain") 
             
                 
                   
@@ -80,7 +80,7 @@ screen gmapscreen():
             idle "rn" 
             hover "rn1"
             if pages >= 2:
-                action Jump("gAct3_3") 
+                action Jump("gthirdvillain") 
     vbox:
         xalign 0.5
         yalign 0.8
@@ -92,7 +92,7 @@ screen gmapscreen():
             idle "cv" 
             hover "cv1"
             if pages >= 1:
-                action Jump("gAct3_2") 
+                action Jump("gsecondvillain") 
     vbox:
         xalign 0.94
         yalign 0.3
@@ -104,7 +104,7 @@ screen gmapscreen():
             idle "mt" 
             hover "mt1"
             if pages >= 0:
-                action Jump("gAct3") 
+                action Jump("gfirstvillain") 
             
                 
                   

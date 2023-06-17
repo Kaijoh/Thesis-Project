@@ -1,4 +1,6 @@
 label gpquiz1():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts
@@ -285,6 +287,8 @@ label gprogress2:
 
 #vocabulary
 label gpquiz2():
+    show screen bmapbutton
+    show screen soundson
     show screen gameUI
     show screen rewardbutton
     show screen hearts
