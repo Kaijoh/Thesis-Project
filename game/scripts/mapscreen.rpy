@@ -79,8 +79,8 @@ screen gmapscreen():
         imagebutton: 
             idle "rn" 
             hover "rn1"
-            if pages >= 2:
-                action Jump("gthirdvillain") 
+            # if pages >= 2:
+            #     action Jump("gthirdvillain") 
     vbox:
         xalign 0.5
         yalign 0.8
@@ -91,8 +91,8 @@ screen gmapscreen():
         imagebutton: 
             idle "cv" 
             hover "cv1"
-            if pages >= 1:
-                action Jump("gsecondvillain") 
+            # if pages >= 1:
+            #     action Jump("gsecondvillain") 
     vbox:
         xalign 0.94
         yalign 0.3
