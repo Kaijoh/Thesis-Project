@@ -211,7 +211,7 @@ label splashscreen3:
     hide mytext with dissolve
     with Pause(1)
 
-    show mytext "ASSETS - ITCH.IO" with dissolve
+    show mytext "ASSETS: \nITCH.IO\nhttp://icons8.com\nhttps://iconarchive.com\nMIT (Open Source)\nCC Attribution 4.0\nhttps://wallpapercave.com/\n" with dissolve
     with Pause(2)
 
     hide mytext with dissolve

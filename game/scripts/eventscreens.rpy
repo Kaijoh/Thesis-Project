@@ -148,7 +148,7 @@ screen rewardshop():
             yalign 0.5
             padding (50,50)
             margin (0,0,10,0)
-            text "                   EXCHANGE REWARD.\n\nYou can exchange your book page here for a \npermanent additional heart that will help you\nin your jouney.\n1 page = 1 heart "
+            text "                   EXCHANGE REWARD.\n\nYou can exchange your book page here for a \n additional heart that will help you\nin your jouney.\n1 page = 1 heart "
     vbox:
         xalign 0.5
         yalign 0.5
@@ -201,7 +201,7 @@ screen question1():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nYou left _____ phone at home.\n\na. your\nb. you're\nc. youre\nd. you'll"
+            text "Which word belongs in the blank space?.\nYou left _____ phone at home.\n\na. your\nb. you're\nc. youre\nd. you'll"
 
 screen question2(): 
     hbox:
@@ -213,7 +213,7 @@ screen question2():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\n_____ dinner last night, I watched a movie with my family.\n\na. After\nb. when\nc. our\nd. On"
+            text "Which word belongs in the blank space?.\n_____ dinner last night, I watched a movie with my family.\n\na. After\nb. when\nc. our\nd. On"
 
 screen question3():
     hbox:
@@ -225,7 +225,7 @@ screen question3():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nThe teacher ____________ the students for not studying for the test.\n\na. Praisess\nb. Scolded\nc. Encourager\nd. Congratulated"
+            text "Which word belongs in the blank space?.\nThe teacher ____________ the students for not studying for the test.\n\na. Praisess\nb. Scolded\nc. Encourager\nd. Congratulated"
 
 screen question4():
     hbox:
@@ -237,7 +237,7 @@ screen question4():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nShe was ____________ when she heard the news.\n\na. Happiness\nb. Sad\nc. Worry\nd. Laugh"
+            text "Which word belongs in the blank space?.\nShe was ____________ when she heard the news.\n\na. Happiness\nb. Sad\nc. Worry\nd. Laugh"
 
 screen question5():
     hbox:
@@ -249,7 +249,7 @@ screen question5():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nThe team lost and their performance was ____________ in the championship game.\n\na. Incredibles\nb. Disappointing\nc.Insanely \nd. Outstanding"
+            text "Which word belongs in the blank space?.\nThe team lost and their performance was ____________ in the championship game.\n\na. Incredibles\nb. Disappointing\nc.Insanely \nd. Outstanding"
 
 screen question6():
     hbox:
@@ -261,7 +261,7 @@ screen question6():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nHe __________ like ice cream.\n\na. want\nb. doesn't\nc. isn't\nd. not"
+            text "Which word belongs in the blank space?.\nHe __________ like ice cream.\n\na. want\nb. doesn't\nc. isn't\nd. not"
 
 screen question7():
     hbox:
@@ -273,7 +273,7 @@ screen question7():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nShe _______ a cat.\n\na. haves \nb. has \nc. is have\nd. not have"
+            text "Which word belongs in the blank space?.\nShe _______ a cat.\n\na. haves \nb. has \nc. is have\nd. not have"
 
 screen question8():
     hbox:
@@ -285,7 +285,7 @@ screen question8():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nI _________ to the park yesterday.\n\na. goed \nb. went \nc. go \nd. was"
+            text "Which word belongs in the blank space?.\nI _________ to the park yesterday.\n\na. goed \nb. went \nc. go \nd. was"
 
 screen question9():
     hbox:
@@ -297,7 +297,7 @@ screen question9():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nThey _________ happy.\n\na. am \nb. is \nc. are \nd. be "
+            text "Which word belongs in the blank space?.\nThey _________ happy.\n\na. am \nb. is \nc. are \nd. be "
 
 screen question10():
     hbox:
@@ -309,18 +309,7 @@ screen question10():
             yalign 0.5
             padding (50,100)
             margin (0,0,10,0)
-            text "Which word belongs in the blank space?\nWe _________ to the party.\n\na. didn't went \nb. didn't go \nc. don't go\nd. wasn't go"
-
-
-
-
-
-
-
-
-
-
-
+            text "Which word belongs in the blank space?.\nWe _________ to the party.\n\na. didn't went \nb. didn't go \nc. don't go\nd. wasn't go"
 
 
 screen question11():

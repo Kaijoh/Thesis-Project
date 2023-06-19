@@ -1,10 +1,19 @@
-init python:
-    def next_rnd_in_list( theList ):
-        renpy.random.shuffle(theList)
-        last_used = theList.pop(0)
-        theList.append(last_used)
-        return theList[0]
+# init python:
+#     def next_rnd_in_list( theList ):
+#         renpy.random.shuffle(theList)
+#         last_used = theList.pop(0)
+#         theList.append(last_used)
+#         return theList[0]
 
+init python:
+    questions_encountered = []
+
+    def next_rnd_in_list(theList):
+        renpy.random.shuffle(theList)
+        for question in theList:
+            if question not in questions_encountered:
+                questions_encountered.append(question)
+                return question
 
     question_masterlist = [ "question_001", "question_002", "question_003", "question_004", "question_005", "question_006", "question_007", "question_008", "question_009", "question_010", "question_011", "question_012", "question_013", "question_014", "question_015", "question_016", "question_017", "question_018", "question_019", "question_020",]
     question_masterlist1 = [ "bquestion_001", "bquestion_002", "bquestion_003", "bquestion_004", "bquestion_005", "bquestion_006", "bquestion_007", "bquestion_008", "bquestion_009", "bquestion_010", "bquestion_011", "bquestion_012", "bquestion_013", "bquestion_014", "bquestion_015", "bquestion_016", "bquestion_017", "bquestion_018", "bquestion_019", "bquestion_020",]
@@ -15,6 +24,7 @@ init python:
     question_masterlist6 = [ "bround2", "bround3"]
     # question_masterlist3 = [ "bquestion_001", "bquestion_002", "bquestion_003", "bquestion_004", "bquestion_005", "bquestion_006", "bquestion_007", "bquestion_008", "bquestion_009", "bquestion_010"]
     
+
 label gquiz1():
     show screen bmapbutton
     show screen soundson
@@ -23,61 +33,78 @@ label gquiz1():
     show screen hearts
     show screen books
 
-    call expression next_rnd_in_list( question_masterlist)
+    # $ selected_question = next_rnd_in_list(question_masterlist)
 
-    if _return == "pass":
-        call expression next_rnd_in_list(question_masterlist)
-
-        if _return == "pass":
-            call expression next_rnd_in_list(question_masterlist)
-            
-            if _return == "pass":
-                call expression next_rnd_in_list(question_masterlist)
-
-                if _return == "pass":
-                    call expression next_rnd_in_list(question_masterlist)
-
-                    if _return == "pass":
-                        call expression next_rnd_in_list(question_masterlist)
-
-                        if _return == "pass":
-                            call expression next_rnd_in_list(question_masterlist)
-
-                            if _return == "pass":
-                                call expression next_rnd_in_list(question_masterlist)  
-
-                                if _return == "pass":
-                                    call expression next_rnd_in_list(question_masterlist)   
-                                       
-                                    if _return == "pass":
-                                        call expression next_rnd_in_list(question_masterlist)      
-                
-                                        if _return == "pass":
-                                            n "nice you got it"
-                                            jump gscoref
+    # call label selected_question
     
-    return
+    # call expression next_rnd_in_list( question_masterlist)
+
+    # if _return == "pass":
+    #     call expression next_rnd_in_list(question_masterlist)
+
+    #     if _return == "pass":
+    #         call expression next_rnd_in_list(question_masterlist)
+            
+    #         if _return == "pass":
+    #             call expression next_rnd_in_list(question_masterlist)
+
+    #             if _return == "pass":
+    #                 call expression next_rnd_in_list(question_masterlist)
+
+    #                 if _return == "pass":
+    #                     call expression next_rnd_in_list(question_masterlist)
+
+    #                     if _return == "pass":
+    #                         call expression next_rnd_in_list(question_masterlist)
+
+    #                         if _return == "pass":
+    #                             call expression next_rnd_in_list(question_masterlist)  
+
+    #                             if _return == "pass":
+    #                                 call expression next_rnd_in_list(question_masterlist)   
+                                       
+    #                                 if _return == "pass":
+    #                                     call expression next_rnd_in_list(question_masterlist)      
+                
+    #                                     if _return == "pass":
+    #                                         n "nice you got it"
+    #                                         jump gscoref
+    
+    # return
+    $ num_questions = 10
+    $ answered_questions = []
+
+    while num_questions > 0:
+        $ selected_question = next_rnd_in_list(question_masterlist)
+        call expression selected_question
+
+        if _return == "pass" and selected_question not in answered_questions:
+            n "Nice! You got it!"
+            $ num_questions -= 1
+            $ answered_questions.append(selected_question)
+
+    jump gscoref
                 
 
 label question_001:
 
     ct "question"
     menu(question="What is an adjective?"):
-        "a. A word that describes a noun or pronoun":
+        "a. A word that describes a noun or pronoun.":
             $ player_score3 += 1
             return "pass"
-        "b. A word that replaces a noun":
+        "b. A word that replaces a noun.":
             pass
-        "c. A word that describes a verb":
+        "c. A word that describes a verb.":
             pass
-        "d. A word that connects two ideas":
+        "d. A word that connects two ideas.":
             pass
 
     $ player_score3 -= 1
     $ lives -= 1
 
     show girlupset at right with hpunch
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -89,21 +116,21 @@ label question_002:
     ct "question"
     # Answer: a) A word that describes a verb, adjective, or other adverb
     menu (question="What is an adverb?"):
-        "a. A word that describes a verb, adjective, or other adverb":
+        "a. A word that describes a verb, adjective, or other adverb.":
             $ player_score3 += 1
             return "pass"
-        "b. A word that connects two ideas":
+        "b. A word that connects two ideas.":
             pass
-        "c. A word that replaces a noun":
+        "c. A word that replaces a noun.":
             pass
-        "d. A word that describes a noun or pronoun":
+        "d. A word that describes a noun or pronoun.":
             pass
 
     $ player_score3 -= 1
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -129,7 +156,7 @@ label question_003:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -155,7 +182,7 @@ label question_004:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -181,7 +208,7 @@ label question_005:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -207,7 +234,7 @@ label question_006:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -233,7 +260,7 @@ label question_007:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -259,7 +286,7 @@ label question_008:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -285,7 +312,7 @@ label question_009:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -312,7 +339,7 @@ label question_010:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -339,7 +366,7 @@ label question_011:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -366,7 +393,7 @@ label question_012:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -393,7 +420,7 @@ label question_013:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -420,7 +447,7 @@ label question_014:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -447,7 +474,7 @@ label question_015:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -474,7 +501,7 @@ label question_016:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -501,7 +528,7 @@ label question_017:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -528,7 +555,7 @@ label question_018:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -555,7 +582,7 @@ label question_019:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -582,7 +609,7 @@ label question_020:
     $ lives -= 1
 
     show girlupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide girlupset with dissolve
 
     if lives <= 0:
@@ -592,11 +619,16 @@ label question_020:
 
 #player nagivation after the quiz
 label gscoref:
-    "your final score: [player_score3]"
+    "Your score in this level is: [player_score3]!"
     jump gprogress1
 
 label gprogress1:
+    if player_score3 == 10:
+        "Awesome!. You got a perfect score!"
+        jump gthirdvillainwin
+
     if player_score3 >= 7:
         jump gthirdvillainwin
-    else:
-        jump gthirdvillainlose
+    
+    jump gthirdvillainlose
+    

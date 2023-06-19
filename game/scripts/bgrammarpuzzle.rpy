@@ -1,4 +1,4 @@
-label bpquiz1():
+label bpquiz1:
     show screen bmapbutton
     show screen soundson
     show screen gameUI
@@ -6,34 +6,31 @@ label bpquiz1():
     show screen hearts
     show screen books
 
-    call expression next_rnd_in_list(question_masterlist4)
+    $ num_questions = 5
+    $ answered_questions = []
 
-    if _return == "pass":
-        call expression next_rnd_in_list(question_masterlist4)
+    while num_questions > 0:
+        $ selected_question = next_rnd_in_list(question_masterlist4)
+        call expression selected_question
 
-        if _return == "pass":
-            call expression next_rnd_in_list(question_masterlist4)
-            
-            if _return == "pass":
-                call expression next_rnd_in_list(question_masterlist4)   
+        if _return == "pass" and selected_question not in answered_questions:
+            n "Nice! You got it!"
+            $ num_questions -= 1
+            $ answered_questions.append(selected_question)
 
-                if _return == "pass":
-                    call expression next_rnd_in_list(question_masterlist4)    
-                
-                    if _return == "pass":
-                        n "nice you got it"
-                        jump bscoref2
-    
-    return
+    jump bscoref2
+
+
+
 
 label bpquestion_001:
     show screen question1
-    $ answer1 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer1 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer1.lower() in ["your"]:
         $ player_score += 1
         hide screen question1
-        ct "Wonderful! guess you have a knacked on this thing. Now lets spice things up ;)"
+        ct "Wonderful!. Guess you have a knacked on this thing. Now let's spice things up."
 
         return "pass"
 
@@ -42,7 +39,7 @@ label bpquestion_001:
 
     hide screen question1
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -52,11 +49,11 @@ label bpquestion_001:
 
 label bpquestion_002:
     show screen question2
-    $ answer2 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer2 = renpy.input("Type the correct word here! (not letter of your choice.)")
     
     if answer2.lower() in ["after"]:
         hide screen question2
-        ct "Awesome! you got it right!"
+        ct "Awesome!. You got it right!"
         ct "Explanation: The sentence describes two events that happened one after the other. (After) is the correct word to use to connect the two events."
         $ player_score += 1
         return "pass"
@@ -66,7 +63,7 @@ label bpquestion_002:
 
     hide screen question2
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -77,7 +74,7 @@ label bpquestion_002:
 label bpquestion_003:
     show screen question3
 
-    $ answer3 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer3 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer3.lower() in ["scolded"]:
         hide screen question3
@@ -91,7 +88,7 @@ label bpquestion_003:
 
     hide screen question3
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -101,7 +98,7 @@ label bpquestion_003:
 
 label bpquestion_004:
     show screen question4
-    $ answer4 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer4 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer4.lower() in ["sad"]:
         hide screen question4
@@ -115,7 +112,7 @@ label bpquestion_004:
 
     hide screen question4
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. hehe ..."
+    ct "You got it wrong. Please review it again or do some research. hehe"
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -125,7 +122,7 @@ label bpquestion_004:
 
 label bpquestion_005:
     show screen question5
-    $ answer5 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer5 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer5.lower() in ["disappointing"]:
         hide screen question5
@@ -140,7 +137,7 @@ label bpquestion_005:
 
     hide screen question5
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -150,7 +147,7 @@ label bpquestion_005:
 
 label bpquestion_006:
     show screen question6
-    $ answer6 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer6 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer6.lower() in ["doesn't"]:
         hide screen question6
@@ -165,7 +162,7 @@ label bpquestion_006:
 
     hide screen question6
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -175,7 +172,7 @@ label bpquestion_006:
 
 label bpquestion_007:
     show screen question7
-    $ answer7 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer7 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer7.lower() in ["has"]:
         hide screen question7
@@ -190,7 +187,7 @@ label bpquestion_007:
 
     hide screen question7
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -200,7 +197,7 @@ label bpquestion_007:
 
 label bpquestion_008:
     show screen question8
-    $ answer8 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer8 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer8.lower() in ["went"]:
         hide screen question8
@@ -215,7 +212,7 @@ label bpquestion_008:
 
     hide screen question8
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -225,7 +222,7 @@ label bpquestion_008:
 
 label bpquestion_009:
     show screen question9
-    $ answer9 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer9 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer9.lower() in ["are"]:
         hide screen question9
@@ -240,7 +237,7 @@ label bpquestion_009:
 
     hide screen question9
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -249,8 +246,9 @@ label bpquestion_009:
     jump bpquestion_009
 
 label bpquestion_010:
+
     show screen question10
-    $ answer10 = renpy.input("Type the correct word here! (not letter of your choice .)")
+    $ answer10 = renpy.input("Type the correct word here! (not letter of your choice.)")
 
     if answer10.lower() in ["didn't go"]:
         hide screen question10
@@ -265,7 +263,7 @@ label bpquestion_010:
 
     hide screen question10
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -273,8 +271,10 @@ label bpquestion_010:
 
     jump bpquestion_010
 
+    
+
 label bscoref2:
-    "your score: [player_score]"
+    "Your score in this level is: [player_score]!"
     jump bprogress2
 
 label bprogress2:
@@ -297,35 +297,48 @@ label bpquiz2():
     show screen hearts
     show screen books
 
-    call expression next_rnd_in_list(question_masterlist5)
+    # call expression next_rnd_in_list(question_masterlist5)
 
-    if _return == "pass":
-        call expression next_rnd_in_list(question_masterlist5)
+    # if _return == "pass":
+    #     call expression next_rnd_in_list(question_masterlist5)
 
-        if _return == "pass":
-            call expression next_rnd_in_list(question_masterlist5)
+    #     if _return == "pass":
+    #         call expression next_rnd_in_list(question_masterlist5)
             
-            if _return == "pass":
-                call expression next_rnd_in_list(question_masterlist5)    
+    #         if _return == "pass":
+    #             call expression next_rnd_in_list(question_masterlist5)    
 
-                if _return == "pass":
-                    call expression next_rnd_in_list(question_masterlist5)   
+    #             if _return == "pass":
+    #                 call expression next_rnd_in_list(question_masterlist5)   
                      
-                    if _return == "pass":
-                        call expression next_rnd_in_list(question_masterlist5)    
+    #                 if _return == "pass":
+    #                     call expression next_rnd_in_list(question_masterlist5)    
 
-                        if _return == "pass":
-                            call expression next_rnd_in_list(question_masterlist5)    
+    #                     if _return == "pass":
+    #                         call expression next_rnd_in_list(question_masterlist5)    
                         
-                            if _return == "pass":
-                                n "nice you got it"
-                                jump bscoref3
+    #                         if _return == "pass":
+    #                             n "nice you got it"
+    #                             jump bscoref3
     
-    return
+    # return
+    $ num_questions = 7
+    $ answered_questions = []
+
+    while num_questions > 0:
+        $ selected_question = next_rnd_in_list(question_masterlist5)
+        call expression selected_question
+
+        if _return == "pass" and selected_question not in answered_questions:
+            n "Nice! You got it!"
+            $ num_questions -= 1
+            $ answered_questions.append(selected_question)
+    
+    jump bscoref3
 
 label bpquestion_011:
     show screen question11
-    $ answer11 = renpy.input("enter the letter of the correct answer here.")
+    $ answer11 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer11.lower() in ["a"]:
         hide screen question11
@@ -339,7 +352,7 @@ label bpquestion_011:
 
     hide screen question11
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -349,7 +362,7 @@ label bpquestion_011:
 
 label bpquestion_012:
     show screen question12
-    $ answer12 = renpy.input("enter the letter of the correct answer ")
+    $ answer12 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer12.lower() in ["b"]:
         hide screen question12
@@ -363,7 +376,7 @@ label bpquestion_012:
 
     hide screen question12
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -373,7 +386,7 @@ label bpquestion_012:
 
 label bpquestion_013:
     show screen question13
-    $ answer13 = renpy.input("enter the letter of the correct answer ")
+    $ answer13 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer13.lower() in ["a"]:
         hide screen question13
@@ -387,7 +400,7 @@ label bpquestion_013:
 
     hide screen question13
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -397,7 +410,7 @@ label bpquestion_013:
 
 label bpquestion_014:
     show screen question14
-    $ answer14 = renpy.input("enter the letter of the correct answer ")
+    $ answer14 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer14.lower() in ["a"]:
         hide screen question14
@@ -411,7 +424,7 @@ label bpquestion_014:
 
     hide screen question14
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -421,7 +434,7 @@ label bpquestion_014:
 
 label bpquestion_015:
     show screen question15
-    $ answer15 = renpy.input("enter the letter of the correct answer ")
+    $ answer15 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer15.lower() in ["d"]:
         hide screen question15
@@ -435,7 +448,7 @@ label bpquestion_015:
 
     hide screen question15
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -445,7 +458,7 @@ label bpquestion_015:
 
 label bpquestion_016:
     show screen question16
-    $ answer16 = renpy.input("enter the letter of the correct answer ")
+    $ answer16 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer16.lower() in ["b"]:
         hide screen question16
@@ -459,7 +472,7 @@ label bpquestion_016:
 
     hide screen question16
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -469,12 +482,12 @@ label bpquestion_016:
 
 label bpquestion_017:
     show screen question17
-    $ answer17 = renpy.input("enter the letter of the correct answer ")
+    $ answer17 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer17.lower() in ["b"]:
         hide screen question17
         ct "Wonderful [player_name]!"
-        ct "Explanation: 'Condemn' means to express strong disapproval or criticism towards someone "
+        ct "Explanation: 'Condemn' means to express strong disapproval or criticism towards someone."
         $ player_score2 += 1
         return "pass"
     
@@ -483,7 +496,7 @@ label bpquestion_017:
 
     hide screen question17
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -493,7 +506,7 @@ label bpquestion_017:
 
 label bpquestion_018:
     show screen question18
-    $ answer18 = renpy.input("enter the letter of the correct answer ")
+    $ answer18 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer18.lower() in ["b"]:
         hide screen question18
@@ -507,7 +520,7 @@ label bpquestion_018:
 
     hide screen question18
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -517,7 +530,7 @@ label bpquestion_018:
 
 label bpquestion_019:
     show screen question19
-    $ answer19 = renpy.input("enter the letter of the correct answer ")
+    $ answer19 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer19.lower() in ["d"]:
         hide screen question19
@@ -531,7 +544,7 @@ label bpquestion_019:
 
     hide screen question19
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -541,7 +554,7 @@ label bpquestion_019:
 
 label bpquestion_020:
     show screen question20
-    $ answer20 = renpy.input("enter the letter of the correct answer ")
+    $ answer20 = renpy.input("Enter the letter of the correct answer here.")
 
     if answer20.lower() in ["a"]:
         hide screen question20
@@ -555,7 +568,7 @@ label bpquestion_020:
 
     hide screen question20
     show boyworried at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyworried with dissolve
 
     if lives <= 0:
@@ -564,7 +577,7 @@ label bpquestion_020:
     jump bpquestion_020
 
 label bscoref3:
-    "your final score: [player_score2]"
+    "Your score in this level is: [player_score2]!"
     jump bprogress3
 
 label bprogress3:
@@ -595,7 +608,7 @@ label bbround:
         jump bfirstvillainwin
 
     elif _return == "fail":
-        ct "Awhhhhh You missed the bonus round :'(. Better luck next time!"
+        ct "You missed the bonus round. Better luck next time!"
 
         jump bfirstvillainlose
     
@@ -619,7 +632,7 @@ label bbroundd:
         jump bsecondvillainwin
 
     elif _return == "fail":
-        ct "Awhhhhh You missed the bonus round :'(. Better luck next time!"
+        ct "You missed the bonus round. Better luck next time!"
 
         jump bsecondvillainlose
     

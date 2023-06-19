@@ -2,11 +2,12 @@
 
 #grammar puzzle
 label bfirstvillain:
+    show pic_11 with dissolve
     show greenmad at center with hpunch
     "OY OY OY! Look who is this."
     "A new kid? a kid from another world, perhaps?"
     "I am Mr.Green, the Slime."
-    "Don't laugh at me kid! well anyways,,,, you are in my territory kid. Now before you get a pass here you must play with me first."
+    "Don't laugh at me kid! well anyways, you are in my territory kid. Now before you get a pass here you must play with me first."
     "kekekekekekekekekekekeke."
     "Now lets start!"
     hide greenmad with dissolve
@@ -145,7 +146,7 @@ label bthirdvillain:
     "OY OY OY! Now look who is this."
     "the one who beated my brothers"
     "I am Mr.Red, the slime."
-    "Don't laugh at me kid! well anyways,,,, you are in my territory kid. Now, before you get the last pages and past here you must play with me first."
+    "Don't laugh at me kid! well anyways, you are in my territory kid. Now, before you get the last pages and past here you must play with me first."
     "kukukukukukukukukukukukukukukuku"
     "Now let's start"
     hide redmad with dissolve
@@ -166,6 +167,7 @@ label bthirdvillain:
     ct "From this point on, try to apply the knowledge you gained in the last few levels and figure out the rest."
 
     ct "LETS START! GOODLUCK!"
+    hide board with dissolve
     jump bquiz1
 
 label bthirdvillainwin:

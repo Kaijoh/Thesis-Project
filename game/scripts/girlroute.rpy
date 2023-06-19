@@ -19,10 +19,10 @@ label gAct1:
     n "You picked up the book."
 
     menu:
-        "open the book":
+        "Open the book.":
             pass
 
-        "don't open the book and return it":
+        "Don't open the book and return it.":
             "Your final score [player_score]"
             jump end_game
 

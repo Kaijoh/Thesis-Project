@@ -22,10 +22,10 @@ label bAct1:
     n "You picked up the book."
 
     menu:
-        "open the book":
+        "Open the book.":
             pass
 
-        "don't open the book and return it":
+        "Don't open the book and return it.":
             "Your final score [player_score], [player_score2], [player_score3]"
             jump end_game
 
@@ -229,7 +229,7 @@ label bAct5:
     ct "Act 5: A New Challenge"
     with Pause(1)
     
-    n "the next day......"
+    n "The next day......"
 
     show pic_4 with dissolve
     n "You go back to school and are excited to apply your newfound knowledge."

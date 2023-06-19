@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/boyroute.rpy", line 131: expected 'name' not found.
-    show screen 
-                ^
+File "game/scripts/bgrammarpuzzle.rpy", line 68: expected statement.
+    selected_question = next_rnd_in_list(question_masterlist4)
+                      ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Sun Jun 18 00:03:36 2023
+Sun Jun 18 09:02:41 2023

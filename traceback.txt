@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
-    call expression next_rnd_in_list(question_masterlist4)
-  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
-    call expression next_rnd_in_list(question_masterlist4)
-TypeError: unhashable type: 'RevertableList'
+  File "game/scripts/bgrammarpuzzle.rpy", line 54, in script
+    $ selected_question = next_rnd_in_list(question_masterlist4)
+  File "game/scripts/bgrammarpuzzle.rpy", line 54, in <module>
+    $ selected_question = next_rnd_in_list(question_masterlist4)
+NameError: name 'question_masterlist4' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
-    call expression next_rnd_in_list(question_masterlist4)
-  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 1725, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/scripts/bgrammarpuzzle.rpy", line 9, in script call
-    call expression next_rnd_in_list(question_masterlist4)
-  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\script.py", line 1003, in lookup
-    label = renpy.config.label_overrides.get(label, label)
-TypeError: unhashable type: 'RevertableList'
+  File "game/scripts/bgrammarpuzzle.rpy", line 54, in script
+    $ selected_question = next_rnd_in_list(question_masterlist4)
+  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\JOHN\Downloads\renpy-8.1.0-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/bgrammarpuzzle.rpy", line 54, in <module>
+    $ selected_question = next_rnd_in_list(question_masterlist4)
+NameError: name 'question_masterlist4' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.0.23051307
 striped_template 1.0
-Sun Jun 18 00:04:36 2023
+Sun Jun 18 09:14:34 2023

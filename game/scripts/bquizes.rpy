@@ -6,61 +6,75 @@ label bquiz1():
     show screen hearts
     show screen books
 
-    call expression next_rnd_in_list( question_masterlist1 )
+    # call expression next_rnd_in_list( question_masterlist1 )
 
-    if _return == "pass":
-        call expression next_rnd_in_list(question_masterlist1)
+    # if _return == "pass":
+    #     call expression next_rnd_in_list(question_masterlist1)
 
-        if _return == "pass":
-            call expression next_rnd_in_list(question_masterlist1)
+    #     if _return == "pass":
+    #         call expression next_rnd_in_list(question_masterlist1)
             
-            if _return == "pass":
-                call expression next_rnd_in_list(question_masterlist1)
+    #         if _return == "pass":
+    #             call expression next_rnd_in_list(question_masterlist1)
 
-                if _return == "pass":
-                    call expression next_rnd_in_list(question_masterlist1)
+    #             if _return == "pass":
+    #                 call expression next_rnd_in_list(question_masterlist1)
 
-                    if _return == "pass":
-                        call expression next_rnd_in_list(question_masterlist1)
+    #                 if _return == "pass":
+    #                     call expression next_rnd_in_list(question_masterlist1)
 
-                        if _return == "pass":
-                            call expression next_rnd_in_list(question_masterlist1)
+    #                     if _return == "pass":
+    #                         call expression next_rnd_in_list(question_masterlist1)
 
-                            if _return == "pass":
-                                call expression next_rnd_in_list(question_masterlist1)  
+    #                         if _return == "pass":
+    #                             call expression next_rnd_in_list(question_masterlist1)  
 
-                                if _return == "pass":
-                                    call expression next_rnd_in_list(question_masterlist1)    
+    #                             if _return == "pass":
+    #                                 call expression next_rnd_in_list(question_masterlist1)    
                                       
-                                    if _return == "pass":
-                                        call expression next_rnd_in_list(question_masterlist1)      
+    #                                 if _return == "pass":
+    #                                     call expression next_rnd_in_list(question_masterlist1)      
                 
-                                        if _return == "pass":
-                                            n "nice you got it"
-                                            jump bscoref
+    #                                     if _return == "pass":
+    #                                         n "nice you got it"
+    #                                         jump bscoref
     
-    return
+    # return
+    $ num_questions = 10
+    $ answered_questions = []
+
+    while num_questions > 0:
+        $ selected_question = next_rnd_in_list(question_masterlist1)
+        call expression selected_question
+
+        if _return == "pass" and selected_question not in answered_questions:
+            n "Nice! You got it!"
+            $ num_questions -= 1
+            $ answered_questions.append(selected_question)
+    
+    jump bscoref
+    
                 
 
 label bquestion_001:
 
     ct "question"
     menu(question="What is an adjective?"):
-        "a. A word that describes a noun or pronoun":
+        "a. A word that describes a noun or pronoun.":
             $ player_score3 += 1
             return "pass"
-        "b. A word that replaces a noun":
+        "b. A word that replaces a noun.":
             pass
-        "c. A word that describes a verb":
+        "c. A word that describes a verb.":
             pass
-        "d. A word that connects two ideas":
+        "d. A word that connects two ideas.":
             pass
 
     $ player_score3 -= 1
     $ lives -= 1
 
     show boyupset at right with hpunch
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -72,21 +86,21 @@ label bquestion_002:
     ct "question"
     # Answer: a) A word that describes a verb, adjective, or other adverb
     menu (question="What is an adverb?"):
-        "a. A word that describes a verb, adjective, or other adverb":
+        "a. A word that describes a verb, adjective, or other adverb.":
             $ player_score3 += 1
             return "pass"
-        "b. A word that connects two ideas":
+        "b. A word that connects two ideas.":
             pass
-        "c. A word that replaces a noun":
+        "c. A word that replaces a noun.":
             pass
-        "d. A word that describes a noun or pronoun":
+        "d. A word that describes a noun or pronoun.":
             pass
 
     $ player_score3 -= 1
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -112,7 +126,7 @@ label bquestion_003:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -138,7 +152,7 @@ label bquestion_004:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -164,7 +178,7 @@ label bquestion_005:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -190,7 +204,7 @@ label bquestion_006:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -216,7 +230,7 @@ label bquestion_007:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -242,7 +256,7 @@ label bquestion_008:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -268,7 +282,7 @@ label bquestion_009:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -295,7 +309,7 @@ label bquestion_010:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -322,7 +336,7 @@ label bquestion_011:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -349,7 +363,7 @@ label bquestion_012:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -376,7 +390,7 @@ label bquestion_013:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -403,7 +417,7 @@ label bquestion_014:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -430,7 +444,7 @@ label bquestion_015:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -457,7 +471,7 @@ label bquestion_016:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -484,7 +498,7 @@ label bquestion_017:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -511,7 +525,7 @@ label bquestion_018:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -538,7 +552,7 @@ label bquestion_019:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -565,7 +579,7 @@ label bquestion_020:
     $ lives -= 1
 
     show boyupset at right with moveinbottom
-    ct "You got it wrong. Please review it again or do some research. ^_^..."
+    ct "You got it wrong. Please review it again or do some research."
     hide boyupset with dissolve
 
     if lives <= 0:
@@ -575,7 +589,7 @@ label bquestion_020:
 
 #player nagivation after the quiz
 label bscoref:
-    "your final score: [player_score3]"
+    "Your score in this level is: [player_score3]!"
     jump bprogress1
 
 label bprogress1:
