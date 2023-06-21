@@ -132,21 +132,26 @@ label end_game2:
         "Play Again?": 
             jump notsubmit 
 
+# response = requests.post('http://localhost:8000/submit_score/', data=data) 
+# response = requests.post('https://tlpscoreboard-2638f0dbf094.herokuapp.com/submit_score/', data=data)
 
+# response = requests.get('http://localhost:8000/score_board/') 
+# response = requests.get('https://tlpscoreboard-2638f0dbf094.herokuapp.com/score_board/')
 label end_game:
     scene black 
-    python: 
+    python:
         import requests 
         import json 
  
         data = {'player_name': player_name, 'player_score': str(player_score), 'player_score2': str(player_score2), 'player_score3': str(player_score3)} 
 
-        response = requests.post('http://localhost:8000/submit_score/', data=data) 
- 
+        response = requests.post('https://tlpleaderboard.onrender.com/submit_score/', data=data)
+
         # Check if the request was successful 
         if response.status_code == 200: 
             # Retrieve the scores from the server and display them 
-            response = requests.get('http://localhost:8000/score_board/') 
+          
+            response = requests.get('https://tlpleaderboard.onrender.com/score_board/')
             if response.ok: 
                 try: 
                     player_scores = response.json() 
@@ -164,7 +169,7 @@ label end_game:
 
 
     ct "GAME OVER!......"
-    "Your scores: Easy[player_score], Medium[player_score2], Hard[player_score3]" 
+    "Your scores: Easy: [player_score], Medium: [player_score2], Hard: [player_score3]" 
  
     menu: 
         "Exite Game and submit score?": 
@@ -178,7 +183,7 @@ label submit:
     hide screen fullbooks
     hide screen gameUI
     hide screen rewardbutton 
-    "Your score: [player_score], has been submitted. Thank you for playing!" 
+    "Your scores has been submitted. Thank you for playing!" 
     scene
     jump splashscreen3
  
